@@ -20,7 +20,7 @@ app.post("/tweet", async (req, res) => {
     const result = await client.v2.tweet(text);
     res.json({ success: true, data: result });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ success: false, error: err.message });
   }
 });
 
